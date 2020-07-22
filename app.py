@@ -7,7 +7,7 @@ model=pickle.load(open("flight.pkl","rb"))
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("layout.html")
 
 @app.route("/about.html")
 def about():
@@ -15,7 +15,7 @@ def about():
 
 @app.route("/home.html")
 def return_home():
-    return render_template("home.html")
+    return render_template("layout.html")
 
 @app.route("/predict", methods = ['GET','POST'])
 def predict():
