@@ -2,9 +2,7 @@ from flask import Flask, request, render_template
 import pandas as pd    
 import pickle
 
-
-
-app=Flask(__name__)
+app = Flask(__name__)
 model=pickle.load(open("flight.pkl","rb"))
 
 @app.route("/")
