@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 
-port = int(os.environ.get('PORT', 5000))
+
 app=Flask(__name__)
 model=pickle.load(open("flight.pkl","rb"))
 
