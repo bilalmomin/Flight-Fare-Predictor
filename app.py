@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from flask_cors import cross_origin
 import pandas as pd    
 import pickle
 
@@ -6,18 +7,22 @@ app=Flask(__name__)
 model=pickle.load(open("flight.pkl","rb"))
 
 @app.route("/")
+@cross_origin()
 def home():
     return render_template("layout.html")
 
 @app.route("/about.html")
+@cross_origin()
 def about():
     return render_template("about.html")
 
 @app.route("/home.html")
+@cross_origin()
 def return_home():
     return render_template("layout.html")
 
 @app.route("/predict", methods = ['GET','POST'])
+@cross_origin()
 def predict():
     if request.method == "POST":
         #Journey Date
