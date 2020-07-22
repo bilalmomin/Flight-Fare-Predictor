@@ -6,7 +6,7 @@ app = Flask(__name__)
 model=pickle.load(open("flight.pkl","rb"))
 
 @app.route("/")
-@cross_origin()
+#@cross_origin()
 def home():
     return render_template("home.html")
 
